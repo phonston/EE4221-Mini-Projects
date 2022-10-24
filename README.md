@@ -1,2 +1,2 @@
 # EE4221-Mini-Projects
-share and delpoy more easily
+share and deploy more easily
