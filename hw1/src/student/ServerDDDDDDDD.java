@@ -132,11 +132,13 @@ public class ServerDDDDDDDD implements Runnable {
         // 1. create a fork-join task (parallelMultiply)
         // 2. submit the task to a fork-join pool
         ForkJoinPool pool = new ForkJoinPool();
-        ParallelMultiply task = new ParallelMultiply(matA, matB);
-        pool.invoke(task);
-        product = task.product;
-        pool.close();
-
+        try {
+            ParallelMultiply task = new ParallelMultiply(matA, matB);
+            pool.invoke(task);
+            product = task.product;
+        } finally {
+            pool.close();
+        }
         return product;
     }
 }
