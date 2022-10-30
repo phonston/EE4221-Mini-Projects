@@ -2,9 +2,9 @@
 
 Code used to automatically setup on amazon EC2 instance
 
-Install openjdk 19
+Install openjdk
 ```
-sudo yum install java java-devel
+sudo yum install java java-devel git -y
 ```
 
 Clone this repository
