@@ -4,17 +4,22 @@ Code used to automatically setup on amazon EC2 instance
 
 Install openjdk 19
 ```
-sudo yum install java
+sudo yum install java java-devel
+```
+
+Clone this repository
+```
+git clone https://github.com/phonston/EE4221-Mini-Projects.git
 ```
 
 Compile the classes first
 ```
-javac -d bin src/student/*
+javac -d EE4221-Mini-Projects/hw1/bin EE4221-Mini-Projects/hw1/src/student/*
 ```
 
 Then run the program
 ```
-java --enable-preview -cp /home/phonston/Documents/EE4221/Assignment_1/hw1/bin student.ServerDDDDDDDD
+java --enable-preview -cp EE4221-Mini-Projects/hw1/bin student.ServerDDDDDDDD
 or
-java --enable-preview -cp /home/phonston/Documents/EE4221/Assignment_1/hw1/bin student.ClientDDDDDDDD
+java --enable-preview -cp EE4221-Mini-Projects/hw1/bin student.ClientDDDDDDDD
 ```

@@ -137,7 +137,7 @@ public class ServerDDDDDDDD implements Runnable {
             pool.invoke(task);
             product = task.product;
         } finally {
-            pool.close();
+            pool.shutdownNow();
         }
         return product;
     }
