@@ -108,12 +108,9 @@ public class ServerDDDDDDDD implements Runnable {
                     result.flush();
                 }
 
-            } catch (ClassNotFoundException e) {
-                e.printStackTrace();
-            } catch (IOException e) {
+            } catch (IOException | ClassNotFoundException e) {
                 e.printStackTrace();
             }
-
         } catch (IOException e) {
             e.printStackTrace();
         }
