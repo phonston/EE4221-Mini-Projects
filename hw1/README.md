@@ -21,5 +21,5 @@ Then run the program
 ```
 java --enable-preview -cp EE4221-Mini-Projects/hw1/bin student.ServerDDDDDDDD
 or
-java --enable-preview -cp EE4221-Mini-Projects/hw1/bin student.ClientDDDDDDDD
+java --enable-preview -cp EE4221-Mini-Projects/hw1/bin student.ClientDDDDDDDD insertipaddresshere
 ```
