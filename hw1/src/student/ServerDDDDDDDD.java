@@ -55,11 +55,15 @@ public class ServerDDDDDDDD implements Runnable {
         try {
             // Set server port
             serverSocket = new ServerSocket(port);
+            ExecutorService executor = Executors.newSingleThreadExecutor();
 
             // Keep server running until a connection has been made
-            while (listening)
+            while (listening) {
                 // Start a new thread once a connection has been accepted.
-                new Thread(new ServerDDDDDDDD(serverSocket.accept())).start();
+                // new Thread(new ServerDDDDDDDD(serverSocket.accept())).start();
+                executor.execute(new ServerDDDDDDDD(serverSocket.accept()));
+            }
+            executor.shutdown();
         } catch (IOException e) {
             System.err.println("Could not listen on port: " + port);
             System.exit(-1);
