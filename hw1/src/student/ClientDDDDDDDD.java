@@ -4,8 +4,6 @@ import java.io.*;
 import java.net.*;
 import java.util.Arrays;
 import java.util.Formatter;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A client program that send two matrices to a server to compute their product.
@@ -14,7 +12,7 @@ import java.util.List;
  */
 public class ClientDDDDDDDD {
 
-    public static final String DEFAULT_HOST = "localhost";
+    public static final String DEFAULT_HOST = "127.0.0.1";
     public static final int DEFAULT_PORT = 42210;
 
     /**
