@@ -18,15 +18,15 @@ import java.util.concurrent.RecursiveAction;
  *
  * @author vanting
  */
-public class ServerDDDDDDDD implements Runnable {
+public class Server55724681 implements Runnable {
 
     public static final int DEFAULT_PORT = 42210;
     private Socket socket;
 
-    public ServerDDDDDDDD() {
+    public Server55724681() {
     }
 
-    public ServerDDDDDDDD(Socket socket) {
+    public Server55724681(Socket socket) {
         this.socket = socket;
     }
 
@@ -61,7 +61,7 @@ public class ServerDDDDDDDD implements Runnable {
             while (listening) {
                 // Start a new thread once a connection has been accepted.
                 // new Thread(new ServerDDDDDDDD(serverSocket.accept())).start();
-                executor.execute(new ServerDDDDDDDD(serverSocket.accept()));
+                executor.execute(new Server55724681(serverSocket.accept()));
             }
             executor.shutdown();
         } catch (IOException e) {

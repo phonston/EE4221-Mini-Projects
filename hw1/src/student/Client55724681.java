@@ -10,7 +10,7 @@ import java.util.Formatter;
  *
  * @author vanting
  */
-public class ClientDDDDDDDD {
+public class Client55724681 {
 
     public static final String DEFAULT_HOST = "127.0.0.1";
     public static final int DEFAULT_PORT = 42210;
