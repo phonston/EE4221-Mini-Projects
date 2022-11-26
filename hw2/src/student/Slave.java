@@ -202,8 +202,6 @@ class Matrix implements Serializable {
         return hash;
     }
 
-    // function return a matrix from appending given matrix to the end of this
-    // matrix in O(1)
     public Matrix append(Matrix other) {
         int row = this.row() + other.row();
         int col = this.col();

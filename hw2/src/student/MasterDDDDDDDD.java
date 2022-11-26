@@ -140,9 +140,15 @@ public class MasterDDDDDDDD {
         List<Matrix> matrixList = new CopyOnWriteArrayList<>();
         List<Matrix> partitions = partition(matA, n);
 
+        ExecutorService executor = Executors.newFixedThreadPool(n);
         for (int i = 0; i < n; i++) {
-            Matrix matrix = executeMultiplicationOnSlave(sockets.get(i), partitions.get(i), matB);
-            matrixList.add(matrix);
+            int finalI = i;
+            executor.execute(() -> {
+                Matrix product = executeMultiplicationOnSlave(sockets.get(finalI), partitions.get(finalI), matB);
+                // no need to synchronize add() as executor functions are already thread safe
+                // (google this for doubts)
+                matrixList.add(product);
+            });
         }
 
         Matrix result = combine(matrixList);
