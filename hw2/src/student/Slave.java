@@ -201,17 +201,4 @@ class Matrix implements Serializable {
         hash = 29 * hash + Arrays.deepHashCode(this.nums);
         return hash;
     }
-
-    public Matrix append(Matrix other) {
-        int row = this.row() + other.row();
-        int col = this.col();
-        long[][] temp = new long[row][col];
-        for (int i = 0; i < this.row(); i++) {
-            temp[i] = this.rowAt(i);
-        }
-        for (int i = 0; i < other.row(); i++) {
-            temp[i + this.row()] = other.rowAt(i);
-        }
-        return new Matrix(temp);
-    }
 }

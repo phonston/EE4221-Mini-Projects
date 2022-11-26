@@ -205,10 +205,22 @@ public class MasterDDDDDDDD {
             if (result == null)
                 result = matrix;
             else
-                result = result.append(matrix);
+                result = append(result, matrix);
         }
 
         return result;
     }
 
+    public static Matrix append(Matrix matA, Matrix matB) {
+        int row = matA.row() + matB.row();
+        int col = matA.col();
+        long[][] temp = new long[row][col];
+        for (int i = 0; i < matA.row(); i++) {
+            temp[i] = matA.rowAt(i);
+        }
+        for (int i = 0; i < matB.row(); i++) {
+            temp[i + matA.row()] = matB.rowAt(i);
+        }
+        return new Matrix(temp);
+    }
 }
